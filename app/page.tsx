@@ -1,10 +1,9 @@
-import Button from '@mui/material/Button';
+import {Typography} from '@mui/material';
+
 
 export default function Profile() {
   return (
-    <Button
-
-    >text</Button>
+    <Typography>Coming Soon, This was deployed automatically!</Typography>
   )
 }
 
