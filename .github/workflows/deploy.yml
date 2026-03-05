@@ -11,5 +11,17 @@ jobs:
         run: |
           curl -X POST http://89.167.113.127:8000/webhooks/source/github/events/manual \
             -H "Content-Type: application/json" \
-            -d '{"ref":"refs/heads/main"}'
- 
+            -d '{
+              "ref": "refs/heads/main",
+              "repository": {
+                "name": "${{ github.event.repository.name }}",
+                "full_name": "${{ github.event.repository.full_name }}",
+                "html_url": "${{ github.event.repository.html_url }}"
+              },
+              "pusher": {
+                "name": "${{ github.actor }}"
+              },
+              "sender": {
+                "login": "${{ github.actor }}"
+              }
+            }'
