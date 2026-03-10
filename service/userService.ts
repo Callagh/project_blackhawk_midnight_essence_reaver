@@ -1,5 +1,5 @@
 import  "server-only";
-import  { pool } from "@/db/dbconfig";
+import  { dbLogin } from "@/db/dbconfig";
 
 interface newUser{
     email: string;
@@ -8,6 +8,6 @@ interface newUser{
 
 export async function createUser(user: newUser){
     const {email, password} = user;
-    const result = await pool.query("INSERT INTO users (email, password) VALUES (?, ?);", [email, password]);
+    const result = await dbLogin.query("INSERT INTO users (email, password) VALUES (?, ?);", [email, password]);
     return result;
 }

@@ -1,7 +1,7 @@
 import 'server-only';
 import mysql from 'mysql2';
 
-export const pool = mysql.createPool({
+export const dbLogin = mysql.createPool({
   host:     process.env.DB_HOST,
   port:     Number(process.env.DB_PORT),   
   user:     process.env.DB_USER,

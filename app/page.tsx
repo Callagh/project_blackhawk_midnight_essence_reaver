@@ -1,10 +1,16 @@
 import { Typography, Box } from "@mui/material";
-import { Form } from "./common/Form";
+import  UserForm  from "./common/UserForm";
+import { dbLogin } from '@/db/dbconfig';
 
-export default function Profile() {
+
+export default async function Profile() {
+
+  
+ 
   return (
     <Box>
-      <Typography>Coming Soon, This was deployed automatically!</Typography>
+      <Typography>Coming Soon</Typography>
+      <UserForm type="signUp"/>
     </Box>
   );
 }
